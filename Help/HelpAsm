@@ -1,0 +1,82 @@
++-------------+---------------+-------------------------+
+| Created:Mob | Date:11/04/21 | Objective:Help Assembly |
++-------------+---------------+-------------------------+
++--------+-----------------------+
+|Compiller|nasm -f elf64 <file>  | 
++--------+ ld <file.o> -o <file> | 
+          + ---------------------+
+
+[1] 1 Topic ->
++------------------------+
+|Comment in asm using ";"|
++------------------------+
++------------+
+|Basic Syntax|
+|section .data|
+|section .bss|
+|section .text|
+|+++++++++++++|
++===============================+			
+|;Example			|
+|				|
+|section .data			|				
+|				|
+|section .bss			|
+|				|
+|section .text			|
+|   global _start:		|
+|	                        |
+|start:				|
++===============================+
+|Info-Desc|-------------------------------------------------------------------------------------------+
+|.Data - section is used for declaring initialized data or constants. This data does change at runtime|
+|You can declare various constant values, file names, or buffer size, etc., in this section.|---------+
+\			\			\					   
+|.Bss  - section is used for declaring variables|
+\			\			\
+|.Text - section is used for keeping the actual code|-----------------------------------------------------------------+ 
+This section must begin with the declaration global _start, which tells the kernel where the program execution begins.|
+----------------------------------------------------------------------------------------------------------------------+
+ 
+[!] 2 Topic ->
++---------+
+|Registers|--------------+
+|16 bits = AX, BX, CX e DX|
+|32 bits = EAX, EBX, ECX, EDX|
+|64 bits = RAX, RDI, RCX, RDX|
++----+-----------------------+
+|Info|----------+
+|EAX - Accumaltor|
+|EBX - Base|--
+|ECX - Counter|
+|EDX - Data|------
+|ESI - Source-Index|----
+|EDI - Destination-Index|
+|ESP - Stack-Pointer|---
+|EBP - Base-Pointer|
++-----------------+
+
+[!] 3 Topic ->
++---------------------------+
+|Types and Memmory Allocation|
+|dd, db, dw, dq, dt|--------+
++----+-------------+
+|Info|---------------------------+
+|dd - Define Double Word = 4 bytes|
+|db - Define Byte = 1 bytes|-----+
+|dw - Define Word = 2 bytes|---+
+|dq - Define Quad Word = 4 bytes|
+|dt - Define Ten Word = 10 bytes|
++------------------------------+
++=================================+
+|; Example 		          |
+|				  |
+|choice		DB	'm'	  |
+|number		DW	12345	  |
+|neg_number	DW	-12345	  |
+|big_number	DQ	123456789 |
+|real_number1	DD	1.234  	  |
+|real_number2	DQ	123.456	  |
++=================================+
+
+[!] 4 Topic ->
