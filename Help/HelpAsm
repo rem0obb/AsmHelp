@@ -7,6 +7,7 @@
           + ---------------------+
 
 [1] 1 Topic ->
+
 +------------------------+
 |Comment in asm using ";"|
 +------------------------+
@@ -16,29 +17,30 @@
 |section .bss|
 |section .text|
 |+++++++++++++|
-+===============================+			
-|;Example			|
-|				|
-|section .data			|				
-|				|
-|section .bss			|
-|				|
-|section .text			|
-|   global _start:		|
-|	                        |
-|start:				|
++===============================+
+|;Example                       |
+|                               |
+|section .data                  |
+|                               |
+|section .bss                   |
+|                               |
+|section .text                  |
+|   global _start:              |
+|                               |
+|start:                         |
 +===============================+
 |Info-Desc|-------------------------------------------------------------------------------------------+
 |.Data - section is used for declaring initialized data or constants. This data does change at runtime|
 |You can declare various constant values, file names, or buffer size, etc., in this section.|---------+
-\			\			\					   
+\                       \                       \                                          
 |.Bss  - section is used for declaring variables|
-\			\			\
+\                       \                       \
 |.Text - section is used for keeping the actual code|-----------------------------------------------------------------+ 
 This section must begin with the declaration global _start, which tells the kernel where the program execution begins.|
 ----------------------------------------------------------------------------------------------------------------------+
  
 [!] 2 Topic ->
+
 +---------+
 |Registers|--------------+
 |16 bits = AX, BX, CX e DX|
@@ -49,14 +51,16 @@ This section must begin with the declaration global _start, which tells the kern
 |EAX - Accumaltor|
 |EBX - Base|--
 |ECX - Counter|
-|EDX - Data|------
+|EDX - Dados|------
 |ESI - Source-Index|----
 |EDI - Destination-Index|
 |ESP - Stack-Pointer|---
 |EBP - Base-Pointer|
 +-----------------+
 
+
 [!] 3 Topic ->
+
 +---------------------------+
 |Types and Memmory Allocation|
 |dd, db, dw, dq, dt|--------+
@@ -69,14 +73,24 @@ This section must begin with the declaration global _start, which tells the kern
 |dt - Define Ten Word = 10 bytes|
 +------------------------------+
 +=================================+
-|; Example 		          |
-|				  |
-|choice		DB	'm'	  |
-|number		DW	12345	  |
-|neg_number	DW	-12345	  |
-|big_number	DQ	123456789 |
-|real_number1	DD	1.234  	  |
-|real_number2	DQ	123.456	  |
+|; Example                        |
+|                                 |
+|choice         DB      'm'       |
+|number         DW      12345     |
+|neg_number     DW      -12345    |
+|big_number     DQ      123456789 |
+|real_number1   DD      1.234     |
+|real_number2   DQ      123.456   |
 +=================================+
 
 [!] 4 Topic ->
+
++-----------------------------------------------------------------------------+
+|%eax   Name    %ebx    %ecx    %edx    %esx    %edi                          |
+|1      sys_exit        int     -       -       -       -                     |
+|2      sys_fork        struct pt_regs  -       -       -       -             |
+|3      sys_read        unsigned int    char *  size_t  -       -             |
+|4      sys_write       unsigned int    const   char *  size_t  -       -     |
+|5      sys_open        const char *    int     int     -       -             |
+|6      sys_close       unsigned int    -       -       -       -             |
++-----------------------------------------------------------------------------+
