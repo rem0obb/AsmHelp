@@ -1,60 +1,41 @@
-# 💻 AsmHelp 
+# 💻 About the project
+AsmHelp a simple basic help for those who are starting in assembly 
+I am a simple student of assembly and I want to share my knowledge for 
+those who have doubts or want to start.
+We're covering here in this project just the `Intel Assembly x86`.
+Feel free to have a look at [Assembly x86_64](https://www.cs.uaf.edu/2017/fall/cs301/reference/x86_64.html)
 
-## ℹ️ Info \
-    AsmHelp a simple basic help for those who are starting in assembly 
-    I am a simple student of assembly and I want to share my knowledge for 
-    those who have doubts or want to start.
-    
+# Index
+   - [Basic Syntax](#basic-syntax)
+   - [Sections](#basic-sections)
+   - [Registers](#registers)
+   - [Syscalls](#syscalls)
+   - [Types](#types)
+   - [Memory Allocation](#memory-allocation)
  
-## 🆘 Help \
-    Well, the reading is simple ... 
-    i'll talk about soon i give an example, real codes in assembly will be seen 
-    throughout the  publications that i will be adding here on AsmHelp.
-    
-## 🤖 Indices \
-   | ?  | Description |
-   | -- | -- |
-   | Basic-Syntax | Basic syntax in assembly sections |
-   | Registers | Registers in assembly are for general data manipulation | 
-   | Types and Memmory Allocation |  Types and Memmory Allocation |
-   | Syscalls | syscalls call the kernel |
-   
+# Basic Syntax
+Basically a assembly instruction is made by a `mnemonic register1, register2`, and we just keep putting and taking out values form these registers.
+That `mnemonic` is a assembly instruction that will make some operation between (usually) two registers.
 
---------------------------------------------------------------------
-    
-# 📖 Topics >>
-    
-## Basic Syntax
- 
-| Basic Syntax | Description |
+```asm
+mov eax, ebx ; Will move the value from ebx to eax
+```
+
+There you know two basics registers, `eax` and `ebx` also that the `;` can be used to create comments
+
+# Basic Sections
+[`"Roughly, a section is a range of addresses, with no gaps; all data "in" those addresses is treated the same for some particular purpose."`](https://ftp.gnu.org/old-gnu/Manuals/gas-2.9.1/html_chapter/as_4.html).
+Keeping it simple, basic are memory spaces that you can separate your instructions. Below we have some basics sections that must have in you code.
+We define them using the keyword `section <name>`.
+
+
+| Sections | Description |
 | --- | --- |
-| section .data | .Data - section is used for declaring initialized data or constants. This data does change at runtime You can declare various constant values, file names, or buffer size, etc., in this section. |
-| section .bss | .Bss  - section is used for declaring variables |
-| section .text | .Text - section is used for keeping the actual code This section must begin with the declaration global _start, which tells the kernel where the program execution begins. |
+| .data | .data - section is used for declaring initialized data or constants. This data does change at runtime You can declare various constant values, file names, or buffer size, etc., in this section. |
+| .bss | .bss  - section is used for declaring variables |
+| .text | .text - section is used for keeping the actual code This section must begin with the declaration global _start, which tells the kernel where the program execution begins. |
 
-```
-Comment in asm using ";"
-Assembly language statements are entered one statement per line. format −
+Note: Use  `nasm -f elf_i386 <file>` to assemble and `ld <file.o> -o <output>` to link
 
-Label   Mnemonic   Operands   ;Comment
-```
-
-```assembly
-; Example                       
-                               
-section .data                  
-                              
-section .bss                   
-                              
-section .text                  
-    global _start              
-                               
-_start:                         
-
-```
---------------------------------------------------------------------------------
-Ps -> Compiller using  ```nasm -f elf64 <file> && ld <file.o> -o <file> ``` 
-
---------------------------------------------------------------------------------
-I made a script in shellscript where you can compile quickly
-I will leave it on git to use it, just do the following```_nasm file.asm file 64``` if  system for 32 bits replaces 64 for 32
+I made a script where you can assemble and link quickly
+You dont need to use, but is there anyway. Just do the following `_nasm file.asm file 32`
