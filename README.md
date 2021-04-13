@@ -11,6 +11,8 @@ Feel free to have a look at [Assembly x86_64](https://www.cs.uaf.edu/2017/fall/c
    - [Registers](#registers)
    - [Syscalls](#syscalls)
    - [Types](#types)
+   - [Stack](#stack)
+   - [Heap](#heap)
    - [Memory Allocation](#memory-allocation)
  
 # Basic Syntax
