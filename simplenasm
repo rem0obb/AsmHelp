@@ -1,6 +1,6 @@
 #!/bin/sh
 
-file=$1;
+file=$1
 out=$2
 
 [ $# -lt 2 ] &&	echo "Need more arguments!" && \
