@@ -40,7 +40,7 @@ We define them using the keyword `section <name>`.
 | .text | .text - section is used for keeping the actual code This section must begin with the declaration `global _start`, which tells to the linker the *entry point* of the program and then it'll starts the execution from that point. |
 
 Note: You can use `nasm -f elf_i386 <file>` to assemble and `ld <file.o> -o <output>` to link.
-      But I made a script to automate build our elf executable. You dont need to use, but is there anyway. Just do the following `simplenasm file.asm out.out`
+      But I made a script to automate build our elf executable. You dont need to use, but is there anyway. Just do the following `./simplenasm file.asm out.out`
 
 # Registers
 First of all, what is a register?  [`"A processor register is a quickly accessible location available to a computer's processor. Registers usually consist of a small amount of fast storage, although some registers have specific hardware functions, and may be read-only or write-only."`](https://en.wikipedia.org/wiki/Processor_register). But following the logic of being simple, its basically a fast access "variable" that you can put or remove values.
