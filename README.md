@@ -2,14 +2,17 @@
 
 ## ℹ️ Info ->
     AsmHelp a simple basic help for those who are starting in assembly 
-    I am a simple student of assembly and I want to share my knowledge for those who have doubts or want to start.
+    I am a simple student of assembly and I want to share my knowledge for 
+    those who have doubts or want to start.
     
  
 ## 🆘 Help ->
     Well, the reading is simple ... 
-    i'll talk about soon i give an example, real codes in assembly will be seen throughout the  publications that i will be adding here on AsmHelp.
+    i'll talk about soon i give an example, real codes in assembly will be seen 
+    throughout the  publications that i will be adding here on AsmHelp.
  
-## 🤖 Topics ->
+## 🤖 Indices ->
+    -------------------------
     Basic-Syntax
     -------------------------
     Registers
@@ -31,8 +34,12 @@
 | section .bss | ``.Bss  - section is used for declaring variables`` |
 | section .text | ``.Text - section is used for keeping the actual code This section must begin with the declaration global _start, which tells the kernel where the program execution begins.`` |
 
-``Comment in asm using ";" ``
+```
+Comment in asm using ";"
+Assembly language statements are entered one statement per line. format −
 
+Label   Mnemonic   Operands   ;Comment
+```
 ```assembly
 ; Example                       
                                
@@ -45,9 +52,4 @@ section .text
                                
 start:                         
 
-```
-```
-Assembly language statements are entered one statement per line. format −
-
-label   mnemonic   operands   ;comment
 ```
