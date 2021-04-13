@@ -5,7 +5,8 @@ those who have doubts or want to start.
 We're covering here in this project just the `Linux(ELF) Assembly Intel x86`.
 Feel free to have a look at [Assembly x86_64](https://www.cs.uaf.edu/2017/fall/cs301/reference/x86_64.html)
 
-##### Note: To this guide, we gonna use `nasm` and `ld`. Search how to install them in you linux distribution.
+##### Note1: To this guide, we gonna use `nasm` and `ld`. Search how to install them in you linux distribution
+##### Note2: You can use `nasm` and `ld` manually, but I made a script to automate the building process of our executable. You dont need to use, but is there anyway. Just do the following `./simplenasm file.asm out.out`
 
 # Index
    - [Basic Syntax](#basic-syntax)
@@ -38,9 +39,6 @@ We define them using the keyword `section <name>`.
 | .data | .data - section is used for declaring initialized data or constants. This data does change at runtime you can declare various constant values, file names, or buffer size, etc., in this section. |
 | .bss | .bss  - section is used for declaring uninitialized variables |
 | .text | .text - section is used for keeping the actual code This section must begin with the declaration `global _start`, which tells to the linker the *entry point* of the program and then it'll starts the execution from that point. |
-
-Note: You can use `nasm -f elf_i386 <file>` to assemble and `ld <file.o> -o <output>` to link.
-      But I made a script to automate build our elf executable. You dont need to use, but is there anyway. Just do the following `./simplenasm file.asm out.out`
 
 # Registers
 First of all, what is a register?  [`"A processor register is a quickly accessible location available to a computer's processor. Registers usually consist of a small amount of fast storage, although some registers have specific hardware functions, and may be read-only or write-only."`](https://en.wikipedia.org/wiki/Processor_register). But following the logic of being simple, its basically a fast access "variable" that you can put or remove values.
