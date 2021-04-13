@@ -44,3 +44,19 @@ Note: You can use `nasm -f elf_i386 <file>` to assemble and `ld <file.o> -o <out
 
 
 # Registers
+First of all, what is a register?  [`"A processor register is a quickly accessible location available to a computer's processor. Registers usually consist of a small amount of fast storage, although some registers have specific hardware functions, and may be read-only or write-only."`](https://en.wikipedia.org/wiki/Processor_register). But following the logic of being simple, its basically a fast access "variable" that you can put or remove values.
+In the x86 architecture we have 8 general purpose registers. Strong recommend [this](http://www.cs.virginia.edu/~evans/cs216/guides/x86.html) and [this](https://en.wikibooks.org/wiki/X86_Assembly/X86_Architecture) for a better understanding, not only for registers, but assembly in general.
+The registers are the following:
+
+| Register | Description |
+| --- | --- |
+| eax | Accumulator register -  Used in arithmetic operations |
+| ebx | Base register - Used as a pointer to data |
+| ecx | Counter register - Used in shift/rotate instructions and loops |
+| edx | Data register - Used in arithmetic operations and I/O operations |
+| esi | Source Index register - Used as a pointer to a source in stream operations |
+| edi | Destination Index register -  Used as a pointer to a destination in stream operations |
+| esp | Stack Pointer register - Pointer to the top of the stack |
+| ebp | Stack Base Pointer register - Used to point to the base of the stack |
+
+But most of the registers have lost their special purposes in the modern instruction set, except for `esp` and `ebp`.
