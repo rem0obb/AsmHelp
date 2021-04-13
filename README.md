@@ -1,26 +1,24 @@
 # 💻 AsmHelp 
 
-## ℹ️ Info ->
+## ℹ️ Info \
     AsmHelp a simple basic help for those who are starting in assembly 
     I am a simple student of assembly and I want to share my knowledge for 
     those who have doubts or want to start.
     
  
-## 🆘 Help ->
+## 🆘 Help \
     Well, the reading is simple ... 
     i'll talk about soon i give an example, real codes in assembly will be seen 
     throughout the  publications that i will be adding here on AsmHelp.
- 
-## 🤖 Indices ->
-    -------------------------
-    Basic-Syntax
-    -------------------------
-    Registers
-    -------------------------
-    Types and Memmory Allocation
-    -------------------------
-    Syscalls
-    -------------------------
+    
+## 🤖 Indices \
+   | ?  | Description |
+   | -- | -- |
+   | Basic-Syntax | Basic syntax in assembly sections |
+   | Registers | Registers in assembly are for general data manipulation | 
+   | Types and Memmory Allocation |  Types and Memmory Allocation |
+   | Syscalls | syscalls call the kernel |
+   
 
 --------------------------------------------------------------------
     
@@ -40,6 +38,7 @@ Assembly language statements are entered one statement per line. format −
 
 Label   Mnemonic   Operands   ;Comment
 ```
+
 ```assembly
 ; Example                       
                                
@@ -53,3 +52,9 @@ section .text
 start:                         
 
 ```
+--------------------------------------------------------------------------------
+Ps -> Compiller using  ```nasm -f elf64 <file> && ld <file.o> -o <file> ``` 
+
+--------------------------------------------------------------------------------
+I made a script in shellscript where you can compile quickly
+I will leave it on git to use it, just do the following```_nasm file.asm file 64``` if  system for 32 bits replaces 64 for 32
