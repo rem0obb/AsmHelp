@@ -47,9 +47,9 @@ section .data
 section .bss                   
                               
 section .text                  
-    global _start:              
+    global _start              
                                
-start:                         
+_start:                         
 
 ```
 --------------------------------------------------------------------------------
