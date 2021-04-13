@@ -28,6 +28,7 @@ There you know two basics registers, `eax` and `ebx` also that the `;` can be us
 Keeping it simple, basic are memory spaces that you can separate your instructions. Below we have some basics sections that must have in you code.
 We define them using the keyword `section <name>`.
 
+
 | Sections | Description |
 | --- | --- |
 | .data | .data - section is used for declaring initialized data or constants. This data does change at runtime You can declare various constant values, file names, or buffer size, etc., in this section. |
