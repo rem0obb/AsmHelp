@@ -1,9 +1,9 @@
 # 💻 About the project
-    AsmHelp a simple basic help for those who are starting in assembly 
-    I am a simple student of assembly and I want to share my knowledge for 
-    those who have doubts or want to start.
-    We're covering here in this project just the `Intel Assembly x86`.
-    Feel free to have a look at [Assembly x86_64](https://www.cs.uaf.edu/2017/fall/cs301/reference/x86_64.html)
+AsmHelp a simple basic help for those who are starting in assembly 
+I am a simple student of assembly and I want to share my knowledge for 
+those who have doubts or want to start.
+We're covering here in this project just the `Intel Assembly x86`.
+Feel free to have a look at [Assembly x86_64](https://www.cs.uaf.edu/2017/fall/cs301/reference/x86_64.html)
 
 # Index
    - [Basic Syntax](#basic-syntax)
@@ -13,11 +13,6 @@
    - [Types](#types)
    - [Memory Allocation](#memory-allocation)
  
-## 🆘 Help
-    Well, the reading is simple ... 
-    i'll talk about soon i give an example, real codes in assembly will be seen 
-    throughout the  publications that i will be adding here on AsmHelp.
-
 # Basic Syntax
 Basically a assembly instruction is made by a `mnemonic register1, register2`, and we just keep putting and taking out values form these registers.
 That `mnemonic` is a assembly instruction that will make some operation between (usually) two registers.
