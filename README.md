@@ -18,5 +18,36 @@
     -------------------------
     Syscalls
     -------------------------
-   
+
+--------------------------------------------------------------------
     
+# 📖 Topics >>
+    
+## Basic Syntax
+ 
+| Basic Syntax | Description |
+| --- | --- |
+| section .data | ``.Data - section is used for declaring initialized data or constants. This data does change at runtime You can declare various constant values, file names, or buffer size, etc., in this section.`` |
+| section .bss | ``.Bss  - section is used for declaring variables`` |
+| section .text | ``.Text - section is used for keeping the actual code This section must begin with the declaration global _start, which tells the kernel where the program execution begins.`` |
+
+``Comment in asm using ";" ``
+
+```assembly
+; Example                       
+                               
+section .data                  
+                              
+section .bss                   
+                              
+section .text                  
+    global _start:              
+                               
+start:                         
+
+```
+```
+Assembly language statements are entered one statement per line. format −
+
+label   mnemonic   operands   ;comment
+```
