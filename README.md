@@ -42,4 +42,5 @@ We define them using the keyword `section <name>`.
 Note: You can use `nasm -f elf_i386 <file>` to assemble and `ld <file.o> -o <output>` to link.
       But I made a script to automate build our elf executable. You dont need to use, but is there anyway. Just do the following `_nasm file.asm file 32`
 
+
 # Registers
