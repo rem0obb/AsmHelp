@@ -25,7 +25,7 @@ There you know two basics registers, `eax` and `ebx` also that the `;` can be us
 
 # Basic Sections
 [`"Roughly, a section is a range of addresses, with no gaps; all data "in" those addresses is treated the same for some particular purpose."`](https://ftp.gnu.org/old-gnu/Manuals/gas-2.9.1/html_chapter/as_4.html).
-Keeping it simple, basic are memory spaces that you can separate your instructions. Below we have some basics sections that must have in you code.
+Keeping it simple, basically are memory spaces that you can separate your instructions. Below we have some basics sections that must have in you code.
 We define them using the keyword `section <name>`.
 
 
