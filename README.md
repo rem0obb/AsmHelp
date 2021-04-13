@@ -35,6 +35,15 @@ We define them using the keyword `section <name>`.
 | .bss | .bss  - section is used for declaring variables |
 | .text | .text - section is used for keeping the actual code This section must begin with the declaration global _start, which tells the kernel where the program execution begins. |
 
+```asm
+section .data
+
+section .text
+   global _start
+
+_start:
+
+```
 Note: Use  `nasm -f elf_i386 <file>` to assemble and `ld <file.o> -o <output>` to link
 
 I made a script where you can assemble and link quickly
