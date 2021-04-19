@@ -61,14 +61,13 @@ But most of the registers have lost their special purposes in the modern instruc
 what is a syscall? well a syscall or system call are APIs for the interface between user space and kernel space. We already use system calls.we've already seen registers and the mov instruction respectively.
 
 You can make use of Linux system calls in your assembly programs. You need to take the following steps for using Linux system calls in your program - 
-```asm 
+
    
     * Put the system call number in the EAX register.
     * Store the arguments to the system call in the registers EBX, ECX, etc.
     * Call the relevant interrupt (80h).
     * The result is usually returned in the EAX register.
 
-```
 The following table shows some of the system calls used in this tutorial -
 
 
