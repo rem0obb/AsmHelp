@@ -12,10 +12,9 @@ Feel free to have a look at [Assembly x86_64](https://www.cs.uaf.edu/2017/fall/c
    - [Sections](#basic-sections)
    - [Registers](#registers)
    - [Syscalls](#syscalls)
-   - [Types](#types)
+   - [Types-Memory-Allocation](#types-memory-allocation)
    - [Stack](#stack)
    - [Heap](#heap)
-   - [Memory Allocation](#memory-allocation)
  
 # Basic Syntax
 Basically a assembly instruction is made by a `mnemonic register1, register2`, and we just keep putting and taking out values form these registers.
@@ -56,3 +55,48 @@ The registers are the following:
 | ebp | Stack Base Pointer register - Used to point to the base of the stack |
 
 But most of the registers have lost their special purposes in the modern instruction set, except for `esp` and `ebp`.
+
+# SysCalls
+
+what is a syscall? well a syscall or system call are APIs for the interface between user space and kernel space. We already use system calls. sys_write and sys_exit, to write on the screen and exit the program, respectively.
+
+You can make use of Linux system calls in your assembly programs. You need to take the following steps for using Linux system calls in your program - 
+```asm 
+   EAX, EBX, ECX, ESI, EDX
+```
+The following table shows some of the system calls used in this tutorial -
+
+
+|  %eax 	|  Name 	|  %ebx 	|  %ecx 	|  %edx |   %esx  |  %edi   |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1 | sys_exit  | int | NULL | NULL | NULL | NULL | 
+| 2 | sys_fork  | struct pt_regs | NULL | NULL | NULL | NULL |
+| 3 | sys_read  | unsigned int | char * | size_t | NULL | NULL |
+| 4 | sys_write | unsigned int | const char * | size_t | NULL | NULL | 
+| 5 | sys_open  | const char * | int | int	| NULL | NULL |
+| 6 | sys_close | unsigned int | NULL | NULL | NULL |  NULL |
+
+let's go to our first assembly code, let's make a folder with all the codes used here, it will be in the codes folder
+lets go !! 
+
+```asm
+section .data
+   msg db "Hello, Word!!", 0xa ;Declaring_variable 
+   len equ $-msg ;Size of bytes 
+
+section .text
+   global _start
+
+_start:
+  
+   mov edx, len ; Moving len to edx
+   mov ecx, msg ; Moving msg to ecx
+   mov ebx, 1 ; Stdout to ebx
+   mov eax, 4 ; Moving sys_write to eax 
+   int 0x80; Call Kernel
+
+   mov eax, 1; moving sys_exit to eax
+   int 0x80; Call Kernel
+   
+```
+congratulations on your ability to create your first assembly code !!
