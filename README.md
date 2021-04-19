@@ -73,12 +73,12 @@ The following table shows some of the system calls used in this tutorial -
 
 |  %eax 	|  Name 	|  %ebx 	|  %ecx 	|  %edx |   %esx  |  %edi   |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | sys_exit  | int | NULL | NULL | NULL | NULL | 
-| 2 | sys_fork  | struct pt_regs | NULL | NULL | NULL | NULL |
-| 3 | sys_read  | unsigned int | char * | size_t | NULL | NULL |
-| 4 | sys_write | unsigned int | const char * | size_t | NULL | NULL | 
-| 5 | sys_open  | const char * | int | int	| NULL | NULL |
-| 6 | sys_close | unsigned int | NULL | NULL | NULL |  NULL |
+| 1 | sys_exit  | int | - | - | - | - | 
+| 2 | sys_fork  | struct pt_regs | NULL | - | - | - |
+| 3 | sys_read  | unsigned int | char * | size_t | - | - |
+| 4 | sys_write | unsigned int | const char * | size_t | - | - | 
+| 5 | sys_open  | const char * | int | int	| - | - |
+| 6 | sys_close | unsigned int | - | - | - |  - |
 
 let's go to our first assembly code, let's make a folder with all the codes used here, it will be in the codes folder
 lets go !! 
