@@ -58,7 +58,7 @@ But most of the registers have lost their special purposes in the modern instruc
 
 # SysCalls
 
-what is a syscall? well a syscall or system call are APIs for the interface between user space and kernel space. We already use system calls. sys_write and sys_exit, to write on the screen and exit the program, respectively.
+what is a syscall? well a syscall or system call are APIs for the interface between user space and kernel space. We already use system calls.we've already seen registers and the mov instruction respectively.
 
 You can make use of Linux system calls in your assembly programs. You need to take the following steps for using Linux system calls in your program - 
 ```asm 
