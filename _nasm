@@ -1,15 +1,17 @@
 #!/bin/sh
 
-file=$1
-out=$2
+_file=$1
+_exit=$2
+_exit2=$3
 
-[ $# -lt 2 ] &&	echo "Need more arguments!" && \
+[ $# -lt 3 ] && echo "Need more arguments!" && \
              echo "Usage: $0 <file.asm> <output.out> " && \
-	     echo "E.g.: $0 hello.asm hello.out" && \
-	     exit
+             echo "E.g.: $0 hello.asm hello.out" && \
+             exit
 
 # Set the default architecture to x86
-nasm -f elf_i386 $file
-ld a.out -o $out
-rm a.out
-echo "\033[32m[+]\033[0m Done!"
+nasm -f elf64 $_file -o $_exit
+ld $_exit -o $_exit2 
+rm $_exit
+echo "[+]Done!"
+
