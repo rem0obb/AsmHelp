@@ -12,7 +12,7 @@ Feel free to have a look at [Assembly x86_64](https://www.cs.uaf.edu/2017/fall/c
    - [Sections](#basic-sections)
    - [Registers](#registers)
    - [Syscalls](#syscalls)
-   - [Types-Memory-Allocation](#types-memory-allocation)
+   - [Types-Variables-Allocation](#types-variables-allocation)
    - [Stack](#stack)
    - [Heap](#heap)
  
@@ -104,3 +104,78 @@ _start:
    
 ```
 congratulations on your ability to create your first assembly code !!
+
+
+# Types-Variables-Allocation
+
+Storage space for variables. Assembly policy is used for storage space allocation. It can be used to reserve and initialize one or more bytes such as ```db dw dd dq dt```.
+ 
+the allocation for boot data is as follows.
+
+| syntax | - | - | - |
+| --- | --- | --- | --- |
+| variable-name  |  define-type  | initial-value |
+
+
+as well as other languages, make the correct use of the allocation, 
+to avoid errors when it is compiled.
+next we will see the instructions and their functions in the allocation.
+
+| type | Meaning | bytes allocated |
+| --- | --- | --- |
+| DB  |	Define Byte | allocates 1 byte |
+| DW  |  Define Word	| allocates 2 bytes |
+| DD	|  Define Doublewordi | allocates 4 bytes |
+| DQ	|  Define Quadword |	allocates 	8 bytes |
+| DT	|  Define Ten Bytes | allocates 10 bytes |
+
+
+what does each allocate? we will see in the following example.
+
+```asm 
+choice		DB	'y' 
+```  
+it allocates characters in, 
+it can be a string like in the example of 
+"hello, word" remember?
+
+----------------------------------------------------------
+
+```asm
+number		DW	12345
+```
+
+allocates positive numbers
+
+----------------------------------------------------------
+
+```asm
+number_negative	DW	-12345
+```
+
+allocates numbers negatives
+
+----------------------------------------------------------
+
+```asm
+big_number	DQ	123456789
+```
+
+allocates numbers bigs 
+
+----------------------------------------------------------
+
+```asm
+real_number1	DD	1.234
+```
+
+allocates numbers floats
+
+----------------------------------------------------------
+
+```asm
+real_number2	DQ	123.456
+```
+allocates numbers floats big
+
+-----------------------------------------------------------
