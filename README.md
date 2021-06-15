@@ -112,8 +112,8 @@ Storage space for variables. Assembly policy is used for storage space allocatio
  
 the allocation for boot data is as follows.
 
-| syntax | - | - | - |
-| --- | --- | --- | --- |
+| syntax | - | - |
+| --- | --- | --- |
 | variable-name  |  define-type  | initial-value |
 
 
