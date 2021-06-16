@@ -7,6 +7,9 @@ Feel free to have a look at [Assembly x86_64](https://www.cs.uaf.edu/2017/fall/c
 
 ##### Note: To this guide, we gonna use `nasm` and `ld`. Search how to install them in you linux distribution. You can use `nasm` and `ld` manually, but I made a script to automate the building process of our executable. You dont need to use, but is there anyway. Just do the following `./_nasm file.asm out.out`
 
+## Translations
+Leia em [PT-BR](README.pt-br.md)!
+
 # Index
    - [Basic Syntax](#basic-syntax)
    - [Sections](#basic-sections)
@@ -85,7 +88,7 @@ lets go !!
 
 ```asm
 section .data
-   msg db "Hello, Word!!", 0xa ;Declaring_variable 
+   msg db "Hello, Wolrd!!", 0xa ;Declaring_variable 
    len equ $-msg ;Size of bytes 
 
 section .text
@@ -125,7 +128,7 @@ next we will see the instructions and their functions in the allocation.
 | --- | --- | --- |
 | DB  |	Define Byte | allocates 1 byte |
 | DW  |  Define Word	| allocates 2 bytes |
-| DD	|  Define Doublewordi | allocates 4 bytes |
+| DD	|  Define Doubleword | allocates 4 bytes |
 | DQ	|  Define Quadword |	allocates 	8 bytes |
 | DT	|  Define Ten Bytes | allocates 10 bytes |
 
@@ -137,7 +140,7 @@ choice		DB	'y'
 ```  
 it allocates characters in, 
 it can be a string like in the example of 
-"hello, word" remember?
+"hello, wolrd" remember?
 
 ----------------------------------------------------------
 
