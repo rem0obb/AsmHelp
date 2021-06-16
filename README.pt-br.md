@@ -5,7 +5,7 @@ para aqueles que tem dúvidas ou queiram começar.
 Neste projeto estamos cobrindo apenas sobre `Linux(ELF) Assembly Intel x86`.
 Sinta-se à vontade para dar uma olhada em [Assembly x86_64](https://www.cs.uaf.edu/2017/fall/cs301/reference/x86_64.html)
 
-##### Nota: Para este guia, nós iremos utilizar `nasm` e `ld`. Procure como instala-los em sua distribuição linux. Você pode utilizar o `nasm` e o `ld` manualmente, mas eu fiz um *script* para automatizar o processo de construção do nosso executavel. Você não precisa utiliza-lo, mas está lá de qualquer maneira. Apenas faça o seguinte `./simplenasm file.asm out.out`.
+##### Nota: Para este guia, nós iremos utilizar `nasm` e `ld`. Procure como instala-los em sua distribuição linux. Você pode utilizar o `nasm` e o `ld` manualmente, mas eu fiz um *script* para automatizar o processo de construção do nosso executavel. Você não precisa utiliza-lo, mas está lá de qualquer maneira. Apenas faça o seguinte `./_nasm file.asm out.out`.
 
 # Índice
    - [Sintaxe Básica](#sintaxe-básica)
