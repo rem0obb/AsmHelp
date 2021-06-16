@@ -7,6 +7,9 @@ Feel free to have a look at [Assembly x86_64](https://www.cs.uaf.edu/2017/fall/c
 
 ##### Note: To this guide, we gonna use `nasm` and `ld`. Search how to install them in you linux distribution. You can use `nasm` and `ld` manually, but I made a script to automate the building process of our executable. You dont need to use, but is there anyway. Just do the following `./simplenasm file.asm out.out`
 
+## Translations
+Leia em [PT-BR](README.pt-br.md)!
+
 # Index
    - [Basic Syntax](#basic-syntax)
    - [Sections](#basic-sections)
