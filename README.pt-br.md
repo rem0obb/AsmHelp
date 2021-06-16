@@ -38,7 +38,7 @@ Nós as definimos usando a palavra chave `section <name>`.
 | .text | .text - seção usada para manter o código real. Essa seção deve começar com a declaração `global _start`, que informa ao *linker* o *entry point* (ponto de entrada) do programa para que então o programa começe sua execução a partir dele. |
 
 # Registradores
-Em primeiro lugar, o que é um registrador?  [`"Um registrador é um local de acesso rápido disponível para o processador de um computador. Os registros geralmente consistem em uma pequena quantidade de armazenamento rápido, embora alguns tenham funções de hardware específicas e possam ser apenas para leitura ou gravação."`](https://en.wikipedia.org/wiki/Processor_register). Mas seguindo a ideia de simplicidade, um registrador é basicamente uma "variável" de acesso rápido que você pode colocar ou remover valores.
+Em primeiro lugar, o que é um registrador?  [`"Um registrador é um local de acesso rápido disponível para o processador de um computador. Os registradores geralmente consistem em uma pequena quantidade de armazenamento rápido, embora alguns tenham funções de hardware específicas e possam ser apenas para leitura ou gravação."`](https://en.wikipedia.org/wiki/Processor_register). Mas seguindo a ideia de simplicidade, um registrador é basicamente uma "variável" de acesso rápido que você pode colocar ou remover valores.
 Na arquitetura x86, temos 8 registradores de propósito geral. Recomendo fortemente [isto](http://www.cs.virginia.edu/~evans/cs216/guides/x86.html) e [isto](https://en.wikibooks.org/wiki/X86_Assembly/X86_Architecture) para um entendimento melhor, não apenas para registradores, mas Assembly em geral.
 
 Os registradores são os seguintes:
@@ -58,9 +58,9 @@ Mas a maioria dos registradores perderam seus propósitos especiais no conjunto 
 
 # SysCalls
 
-O que é um *syscall*? Bem, um *syscall* ou chamada de sistema são APIs para a interface entre o espaço do usuário e o espaço do kernel. Já utilizamos chamadas de sistema. Vimos também registradores e a instrução `mov` respectivamente.
+O que é um *syscall*? Bem, um *syscall* ou chamada de sistema são APIs para a interface entre o espaço do usuário e o espaço do kernel. Já utilizamos chamadas de sistema anteriormente. Vimos também registradores e a instrução `mov` respectivamente.
 
-Você pode fazer uso das chamadas de sistema do Linux nos seus programas em Assembly. Você precisa seguir os seguintes passos para utiliza-las em seus programas -
+Você pode fazer uso das chamadas de sistema do Linux nos seus programas Assembly. Você precisa seguir os seguintes passos para utiliza-las em seus programas -
 
     * Coloque o número da chamada de sistema no registrador EAX.
     * Armazene os argumento para a chamada de sistema nos registradores EBX, ECX, etc.
@@ -72,12 +72,12 @@ A seguinte tabela mostra algumas das chamadas de sistema usadas nesse tutorial -
 
 |  %eax 	|  Nome 	|  %ebx 	|  %ecx 	|  %edx |   %esx  |  %edi   |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | sys_exit  | int | - | - | - | - | 
+| 1 | sys_exit  | int | - | - | - | - |
 | 2 | sys_fork  | struct pt_regs | NULL | - | - | - |
 | 3 | sys_read  | unsigned int | char * | size_t | - | - |
-| 4 | sys_write | unsigned int | const char * | size_t | - | - | 
-| 5 | sys_open  | const char * | int | int	| - | - |
-| 6 | sys_close | unsigned int | - | - | - |  - |
+| 4 | sys_write | unsigned int | const char * | size_t | - | - |
+| 5 | sys_open  | const char * | int | int | - | - |
+| 6 | sys_close | unsigned int | - | - | - | - |
 
 vamos para o nosso primeiro código Assembly, vamos fazer uma pasta com todos os códigos usados, eles estarão na pasta `codes`!
 
@@ -104,8 +104,7 @@ Parabéns por conseguir criar seu primeiro código Assembly!
 
 
 # Types-Variables-Allocation
-Espaço de armazenamento para variáveis. 
-Storage space for variables. A pólitica de Assembly é usada para espaço de armazenamento. Pode ser usado para reservar e inicializar um ou mais bytes como ```db dw dd dq dt```.
+Espaço de armazenamento para variáveis. A pólitica de Assembly é usada para espaço de armazenamento. Pode ser usado para reservar e inicializar um ou mais bytes como ```db dw dd dq dt```.
 
 A alocação dos dados de inicialização é a seguinte.
 
@@ -120,20 +119,17 @@ A seguir nós veremos as instruções e suas funções na alocação.
 | tipo | Significado | bytes alocados |
 | --- | --- | :-: |
 | DB  | Define Byte | 1 byte |
-| DW  |  Define Word | 2 bytes |
-| DD  |  Define Doublewordi | 4 bytes |
-| DQ  |  Define Quadword | 8 bytes |
-| DT  |  Define Ten Bytes | 10 bytes |
+| DW  | Define Word | 2 bytes |
+| DD  | Define Doubleword | 4 bytes |
+| DQ  | Define Quadword | 8 bytes |
+| DT  | Define Ten Bytes | 10 bytes |
 
-O que cada um aloca: Nós veremos no exemplo a seguir.
+O que cada um aloca? Nós veremos no exemplo a seguir.
 
 ```asm
 choice		DB	'y'
 ```
-esse aloca caracteres, pode ser uma *string* como no exemplo do "hello, word" lembra?
-it allocates characters in, 
-it can be a string like in the example of 
-"hello, world" remember?
+esse aloca caracteres, pode ser uma *string* como no exemplo do "hello, word", lembra?
 
 ----------------------------------------------------------
 

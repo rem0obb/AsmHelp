@@ -85,7 +85,7 @@ lets go !!
 
 ```asm
 section .data
-   msg db "Hello, Word!!", 0xa ;Declaring_variable 
+   msg db "Hello, Wolrd!!", 0xa ;Declaring_variable 
    len equ $-msg ;Size of bytes 
 
 section .text
@@ -125,7 +125,7 @@ next we will see the instructions and their functions in the allocation.
 | --- | --- | --- |
 | DB  |	Define Byte | allocates 1 byte |
 | DW  |  Define Word	| allocates 2 bytes |
-| DD	|  Define Doublewordi | allocates 4 bytes |
+| DD	|  Define Doubleword | allocates 4 bytes |
 | DQ	|  Define Quadword |	allocates 	8 bytes |
 | DT	|  Define Ten Bytes | allocates 10 bytes |
 
@@ -137,7 +137,7 @@ choice		DB	'y'
 ```  
 it allocates characters in, 
 it can be a string like in the example of 
-"hello, word" remember?
+"hello, wolrd" remember?
 
 ----------------------------------------------------------
 
