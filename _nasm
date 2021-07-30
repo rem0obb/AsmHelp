@@ -5,13 +5,12 @@ _exit=$2
 _exit2=$3
 
 [ $# -lt 3 ] && echo "Need more arguments!" && \
-             echo "Usage: $0 <file.asm> <output.out> " && \
-             echo "E.g.: $0 hello.asm hello.out" && \
+             echo "Usage: $0 <file.asm> <output.o> <executable>" && \
+             echo "E.g.: $0 hello.asm hello.out main" && \
              exit
 
 # Set the default architecture to x86
 nasm -f elf64 $_file -o $_exit
-ld $_exit -o $_exit2 
+ld $_exit -o $_exit2
 rm $_exit
 echo "[+]Done!"
-
